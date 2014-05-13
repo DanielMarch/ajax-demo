@@ -3,6 +3,8 @@
 
   $(document).ready(init);
 
+  // var PokerEvaluator = require('poker-evaluator');
+
   function init(){
     $('#draw').click(draw);
   }
@@ -12,11 +14,19 @@
       url:'/poker',
       type: 'POST',
       success: response => {
+        var hand = [];
+        hand.push(response.de1);
+        hand.push(response.de2);
+        hand.push(response.de3);
+        hand.push(response.de4);
+        hand.push(response.de5);
+        // var win = PokerEvaluator.evalHand(hand);
         $('#result1').empty().append('<img src ="/img/Cards/'+response.de1+'.png" />');
         $('#result2').empty().append('<img src ="/img/Cards/'+response.de2+'.png" />');
         $('#result3').empty().append('<img src ="/img/Cards/'+response.de3+'.png" />');
         $('#result4').empty().append('<img src ="/img/Cards/'+response.de4+'.png" />');
         $('#result5').empty().append('<img src ="/img/Cards/'+response.de5+'.png" />');
+        console.log(hand);
       }
     });
     e.preventDefault();
