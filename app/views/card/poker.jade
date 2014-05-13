@@ -1,0 +1,15 @@
+extends ../shared/template
+
+block content
+  h1 Poker
+  button#draw Draw
+  br
+  #handtype
+  .hand#result1
+  .hand#result2
+  .hand#result3
+  .hand#result4
+  .hand#result5
+
+block scripts
+  script(src='/js/es6/compiled/poker.js')

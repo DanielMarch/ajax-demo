@@ -1,0 +1,13 @@
+extends ../shared/template
+
+block content
+  h1 Calc : Sumlist
+
+  form
+    input#sum(type='text', name='num1')
+    button#sumlist Sum the List
+
+    #result
+
+block scripts
+  script(src='/js/es6/compiled/sumlist.js')
